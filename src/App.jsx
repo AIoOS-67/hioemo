@@ -1,4 +1,4 @@
-﻿import { DesktopPanel } from "./components/DesktopPanel";
+import { MarketingSite } from "./components/MarketingSite";
 import { PhoneFrame } from "./components/PhoneFrame";
 import { AppStateProvider, useAppState } from "./context/AppState";
 import { BudgetScreen } from "./screens/BudgetScreen";
@@ -32,14 +32,16 @@ function AppShell() {
     ? state.demoMode
       ? "Demo Connected"
       : "Wallet Connected"
-    : "Hioemo Prototype";
+    : "HioEmo Live Prototype";
 
   return (
-    <div className="app-shell">
-      <DesktopPanel />
-      <PhoneFrame statusText={statusText}>
-        <ActiveScreen />
-      </PhoneFrame>
+    <div className="site-shell">
+      <div className="site-grid">
+        <MarketingSite />
+        <PhoneFrame statusText={statusText}>
+          <ActiveScreen />
+        </PhoneFrame>
+      </div>
     </div>
   );
 }
